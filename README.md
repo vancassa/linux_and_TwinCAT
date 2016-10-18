@@ -13,7 +13,16 @@ Please notify me if you find a way to do it.
 Another better way is to set up a TCP/IP client or server in TwinCAT and let the Linux to talk to TwinCAT directly through TCP/IP.
 However, running TCP/IP client or server in TwinCAT gave me error 6: target port not found.
 The only help I could find is only this German forum: http://www.sps-forum.de/codesys-und-iec61131/60976-twincat3-tcpip-server-sample01-fb_socketlisten-system-error-6-a.html
-But it still couldn't help. Please notify me if you find a way to do it.
+
+EDIT: I managed to make my TCP/IP server working in TwinCAT. Error code 6 means that there is something wrong with the installation of TF6310 function. Go to Control Panel, uninstall the TF6310 TCP/IP Server function, and do a clean installation again. Go to your Task Manager - Processes, there should be TcpIpServer.exe running in the process.
+
+This is an example of connecting Linux on VM with TwinCAT on a Windows host, using TCP/IP.
+
+![alt tag](https://puu.sh/rMWjN/4b1f63343e.png)
+
+The sample code and more info can be found here:
+https://github.com/milk-coffee/TwinCAT_TCP_IP_Server
+
 
 ## Configuration
 Network adapter settings for virtual machine: NAT or Host Only (DHCP)
